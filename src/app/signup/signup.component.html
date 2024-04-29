@@ -1,0 +1,56 @@
+<div class="container mt-5 justify-content-center">
+    <div class="row justify-content-center">
+        <div class="card text-center">
+            <div class="card-header text-light">
+                SignUp
+            </div>
+            <div class="card-body p-3">
+                <form (ngSubmit)="OnSignUp()"  #mySignupForm="ngForm">
+                    <div class="form-group mb-3">
+                        <label class="text-light" for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" pattern="[a-zA-Z ]+" minlength="3" required
+                        name="username" #username="ngModel" [(ngModel)]="user$.username" placeholder="Enter your username">
+                        <div *ngIf="mySignupForm.controls['username']?.invalid && mySignupForm.controls['username']?.dirty || mySignupForm.controls['username']?.touched">
+                            <span *ngIf="mySignupForm.controls['username'].hasError('required')" style="color: aliceblue;">Username is required</span>
+                            <span *ngIf="mySignupForm.controls['username'].hasError('minlength')" style="color:red;">Username should be minimum 3 characters</span>
+                            <span *ngIf="mySignupForm.controls['username'].hasError('pattern')" style="color: red;">Username should contain A-Z or a-z characters</span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="text-light" for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" pattern="[a-zA-Z ]+" minlength="6" required
+                        name="password" #password="ngModel" [(ngModel)]="user$.password" placeholder="Enter your password">
+                        <div *ngIf="mySignupForm.controls['password']?.invalid && mySignupForm.controls['password']?.dirty || mySignupForm.controls['password']?.touched">
+                            <span *ngIf="mySignupForm.controls['password'].hasError('required')" style="color: aliceblue;">Password is required</span>
+                            <span *ngIf="mySignupForm.controls['password'].hasError('minlength')" style="color:red;">Password should be minimum 6 characters</span>
+                            <span *ngIf="mySignupForm.controls['password'].hasError('pattern')" style="color: red;">Password should contain A-Z or a-z characters</span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="text-light" for="username">Email:</label>
+                        <input type="email" class="form-control" id="email" 
+                        name="email" #email="ngModel" [(ngModel)]="user$.email"placeholder="Enter your email">
+                        <div *ngIf="mySignupForm.controls['email']?.invalid && mySignupForm.controls['email']?.dirty || mySignupForm.controls['email']?.touched">
+                            <span *ngIf="mySignupForm.controls['email'].hasError('required')" style="color: aliceblue;">Email is required</span>
+                            <span *ngIf="mySignupForm.controls['email'].hasError('type')" style="color: red;">Need valid email</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="text-light" for="role">Choose Role:</label>
+                        <select class="form-control" id="role" name="role" #role="ngModel" required [(ngModel)]="user$.role">
+                            <option value="teacher">Teacher</option>
+                            <option value="student">Student</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <div *ngIf="mySignupForm.controls['role']?.invalid && mySignupForm.controls['role']?.dirty || mySignupForm.controls['role']?.touched">
+                            <span *ngIf="mySignupForm.controls['role'].hasError('required')" style="color: aliceblue;">Role must be selected</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

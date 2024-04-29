@@ -1,0 +1,154 @@
+a {
+  text-decoration: none;
+}
+
+.row {
+  background-color: rgb(242, 205, 136);
+}
+
+/* Add this to your global styles or component-specific styles */
+.sidebar {
+  position: fixed;
+  top: 40px;
+  /* Adjust based on your navbar height */
+  left: 0;
+  bottom: 0;
+  padding: 1px 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  /* Adjust the width as needed */
+  background-color: #333;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1px;
+}
+
+.sidebar li {
+  padding: 8px;
+}
+
+.list-group-item {
+  border-radius: 0;
+  /* Set border-radius to 0 to remove the curve */
+  border-color: black;
+  background-color: rgba(25, 24, 24, 0.715);
+}
+
+.main-container {
+  /* Adjust based on your sidebar width */
+  margin-left: 230px;
+  transition: margin-left 0.3s;
+  background-color: rgb(242, 205, 136);
+  height: 689px;
+
+
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.welcome {
+  margin-top: 30px;
+  width: 300px;
+  /* Adjust the width as needed */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  /* Adjust the padding as needed */
+  border-radius: 10px;
+  /* Adjust the border radius for rounded corners */
+  background-color: #1beb10;
+  /* Adjust the background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional - add a shadow effect */
+
+  /* Center the content horizontally and vertically */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome h4 {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Adjust the font size */
+
+}
+
+#upload-container {
+  text-align: center;
+  margin-left: 350px;
+  margin-bottom: 20px;
+  margin-top: -25px;
+}
+
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-left: 400px;
+  margin-top: 30px;
+}
+
+.profile-picture {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this to your existing CSS */
+.upload-label {
+  display: inline-block;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  height: 35px;
+  width: 150px;
+  font-size: 11px;
+
+}
+
+.upload-label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  
+}
+
+.reminder-box {
+  position: fixed;
+  background-color: #5a5103;
+  color: rgb(39, 3, 187);
+  padding: 10px;
+  border-radius: 4px;
+  border-style: solid;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 10px;
+  width:500px;
+  height:150px;
+}
+
+.reminder-box:hover {
+  transform: scale(1.1);
+}
+
+.reminder-text {
+  font-size: 16px;
+}

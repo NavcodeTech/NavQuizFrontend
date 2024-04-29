@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand ms-5 text-light" href="#">NavQuiz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul *ngIf="!isLoggedIn()" class="navbar-nav ms-auto me-4">
+        <li class="nav-item active">
+          <a class="badge badge-light" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="badge badge-light" routerLink="signup">SignUp</a>
+        </li>
+      </ul>
+      <ul *ngIf="isLoggedIn()" class="navbar-nav ms-auto me-4">
+        <li class="nav-item active">
+          <button class="btn btn-danger mt-2 mb-2"><a class="badge badge-light" routerLink="login">Logout</a></button>
+        </li>
+      </ul>
+    </div>
+</nav>

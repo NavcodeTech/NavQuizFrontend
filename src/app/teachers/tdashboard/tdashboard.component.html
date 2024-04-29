@@ -1,0 +1,71 @@
+<!-- dashboard.component.html -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 col-lg-3 d-md-block bg-dark sidebar">
+
+            <div class="sidebar">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a class="text-light" routerLink="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-light" routerLink="/profile">Profile</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <a class="text-light" routerLink="/dummy1">Dummy Item 1</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="text-light" routerLink="/dummy2">Dummy Item 2</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+        <!-- Main Content -->
+        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-container">
+            <!-- Your dashboard content goes here -->
+            <!-- For example, you can display user data or charts here -->
+            <div class="content-container">
+                <!-- Your dashboard content goes here -->
+                <!-- For example, you can display user data or charts here -->
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="welcome text-light">
+                            <h4 class="text-light">Welcome, Teacher Kumar</h4>
+                        </div>
+                        <div class="reminder-box text-light">
+                            <span class="reminder-text">{{ reminderText }}</span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div id="grid-container">
+                            <!-- <img *ngFor="let imageUrl of imageUrls" [src]="imageUrl" class="profile-picture"> -->
+                            <img src="/assets/img_avatar.png" class="profile-picture">
+                        </div>
+                        <div id="upload-container">
+                            <div class="text-center">
+                                <label for="upload-input" class="upload-label">
+                                    Upload Profile Picture
+                                    <input type="file" id="upload-input" accept="image/*"
+                                        (change)="onFileSelected($event)">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-quiz-tool></app-quiz-tool>
+        </div>
+    </div>
+</div>
