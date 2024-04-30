@@ -8,7 +8,6 @@ a {
 
 /* Add this to your global styles or component-specific styles */
 .sidebar {
-  position: fixed;
   top: 40px;
   /* Adjust based on your navbar height */
   left: 0;
@@ -48,7 +47,6 @@ a {
 }
 
 .content-container {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -122,7 +120,6 @@ a {
 }
 
 .upload-label input {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -133,7 +130,6 @@ a {
 }
 
 .reminder-box {
-  position: fixed;
   background-color: #5a5103;
   color: rgb(39, 3, 187);
   padding: 10px;
