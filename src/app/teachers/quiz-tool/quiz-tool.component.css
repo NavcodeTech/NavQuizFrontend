@@ -1,0 +1,10 @@
+.QuizFormBox{
+  background-color: #0991f3;
+  color: rgb(227, 225, 233);
+  padding: 20px;
+  border-radius: 4px;
+  border-style: solid;
+  margin-top:8px;
+  width:800px;
+  height:445px;
+}

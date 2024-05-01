@@ -1,44 +1,46 @@
-<div class="container justify-content-center">
-    <h1>Create Quiz</h1>
-    <form>
-        <div class="row">
-            <div class="col-5">
-                <div class="mb-3">
-                    <label for="quizTitle" class="form-label">Quiz Title</label>
-                    <input type="text" class="form-control" id="quizTitle" placeholder="Enter quiz title">
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="QuizFormBox">
+        <h1 class="text-center">Create Quiz</h1>
+        <form>
+            <div class="row">
+                <div class="col-5">
+                    <div class="mb-3">
+                        <label for="quizTitle" class="form-label">Quiz Title</label>
+                        <input type="text" class="form-control" id="quizTitle" placeholder="Enter quiz title">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="mb-3">
+                        <label for="quizSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="quizSubject" placeholder="Enter quiz subject">
+                    </div>
                 </div>
             </div>
-            <div class="col-5">
-                <div class="mb-3">
-                    <label for="quizSubject" class="form-label">Subject</label>
-                    <input type="text" class="form-control" id="quizSubject" placeholder="Enter quiz subject">
+            <div class="row">
+                <div class="col-5">
+                    <div class="mb-3">
+                        <label for="quizDuration" class="form-label">Duration (minutes)</label>
+                        <input type="number" class="form-control" id="quizDuration" placeholder="Enter quiz duration">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="mb-3">
+                        <label for="quizQuestions" class="form-label">Number of Questions</label>
+                        <input type="number" class="form-control" id="quizQuestions"
+                            placeholder="Enter number of questions">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-5">
-                <div class="mb-3">
-                    <label for="quizDuration" class="form-label">Duration (minutes)</label>
-                    <input type="number" class="form-control" id="quizDuration" placeholder="Enter quiz duration">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="quizDescription" class="form-label">Quiz Description</label>
+                        <textarea class="form-control" id="quizDescription" rows="3"
+                            placeholder="Enter quiz description"></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="col-5">
-                <div class="mb-3">
-                    <label for="quizQuestions" class="form-label">Number of Questions</label>
-                    <input type="number" class="form-control" id="quizQuestions"
-                        placeholder="Enter number of questions">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="mb-3">
-                    <label for="quizDescription" class="form-label">Quiz Description</label>
-                    <textarea class="form-control" id="quizDescription" rows="3"
-                        placeholder="Enter quiz description"></textarea>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Create Quiz</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Create Quiz</button>
+        </form>
+    </div>
 </div>
