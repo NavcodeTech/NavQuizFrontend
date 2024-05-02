@@ -1,12 +1,18 @@
 <div class="container d-flex justify-content-center align-items-center">
     <div class="QuizFormBox">
         <h1 class="text-center">Create Quiz</h1>
-        <form>
+        <form (ngSubmit)="createQuiz()" #myCreateQuizForm = "ngForm">
             <div class="row">
                 <div class="col-5">
                     <div class="mb-3">
                         <label for="quizTitle" class="form-label">Quiz Title</label>
-                        <input type="text" class="form-control" id="quizTitle" placeholder="Enter quiz title">
+                        <input type="text" class="form-control" id="quizTitle" placeholder="Enter quiz title"  pattern="[a-zA-Z ]+" minlength="3" required
+                         name="quizTitle" #quizTitle="ngModel" [(ngModel)]="value.quizTitle" placeholder="Enter your quizTitle">
+                        <div *ngIf="myCreateQuizForm.controls['quizTitle']?.invalid && myCreateQuizForm.controls['quizTitle']?.dirty || myCreateQuizForm.controls['quizTitle']?.touched">
+                            <span *ngIf="myCreateQuizForm.controls['quizTitle'].hasError('required')" style="color: aliceblue;">quizTitle is required</span>
+                            <span *ngIf="myCreateQuizForm.controls['quizTitle'].hasError('minlength')" style="color:red;">quizTitle should be minimum 3 characters</span>
+                            <span *ngIf="myCreateQuizForm.controls['quizTitle'].hasError('pattern')" style="color: red;">quizTitle should contain A-Z or a-z characters</span>
+                        </div>>
                     </div>
                 </div>
                 <div class="col-5">
@@ -26,7 +32,7 @@
                 <div class="col-5">
                     <div class="mb-3">
                         <label for="quizQuestions" class="form-label">Number of Questions</label>
-                        <input type="number" class="form-control" id="quizQuestions"
+                        <input type="number" class="form-control" id="quizQuestionQuant"
                             placeholder="Enter number of questions">
                     </div>
                 </div>
