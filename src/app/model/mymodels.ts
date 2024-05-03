@@ -8,6 +8,7 @@ export interface User{
 export interface QuizDetailModel{
     quizTitle: string;
     quizSubject: string;
-    quizQuestionQuant: string;
+    quizDuration: number;
+    quizQuestionQuant: number;
     quizDescription: string;  
 }

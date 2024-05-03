@@ -13,8 +13,9 @@ export class QuizToolComponent implements OnInit {
   value: QuizDetailModel ={
     quizTitle: '',
     quizSubject: '',
-    quizQuestionQuant: '',
-    quizDescription: ''
+    quizQuestionQuant: 0,
+    quizDescription: '',
+    quizDuration: 0
   };
 
   constructor(private userService: UserAuthService, private route:Router) { }
@@ -23,7 +24,7 @@ export class QuizToolComponent implements OnInit {
 
   }
 
-  creeateQuiz()
+  createQuiz()
   {
     console.log(this.value);
   }

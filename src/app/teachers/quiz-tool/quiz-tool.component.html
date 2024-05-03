@@ -7,7 +7,7 @@
                     <div class="mb-3">
                         <label for="quizTitle" class="form-label">Quiz Title</label>
                         <input type="text" class="form-control" id="quizTitle" placeholder="Enter quiz title"  pattern="[a-zA-Z ]+" minlength="3" required
-                         name="quizTitle" #quizTitle="ngModel" [(ngModel)]="value.quizTitle" placeholder="Enter your quizTitle">
+                         name="quizTitle" #quizTitle="ngModel" [(ngModel)]="value.quizTitle">
                         <div *ngIf="myCreateQuizForm.controls['quizTitle']?.invalid && myCreateQuizForm.controls['quizTitle']?.dirty || myCreateQuizForm.controls['quizTitle']?.touched">
                             <span *ngIf="myCreateQuizForm.controls['quizTitle'].hasError('required')" style="color: aliceblue;">quizTitle is required</span>
                             <span *ngIf="myCreateQuizForm.controls['quizTitle'].hasError('minlength')" style="color:red;">quizTitle should be minimum 3 characters</span>
@@ -18,7 +18,13 @@
                 <div class="col-5">
                     <div class="mb-3">
                         <label for="quizSubject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="quizSubject" placeholder="Enter quiz subject">
+                        <input type="text" class="form-control" id="quizSubject" placeholder="Enter quiz subject" pattern="[a-zA-Z ]+" minlength="3" required
+                        name="quizSubject" #quizSubject="ngModel" [(ngModel)]="value.quizSubject">
+                        <div *ngIf="myCreateQuizForm.controls['quizSubject']?.invalid && myCreateQuizForm.controls['quizSubject']?.dirty || myCreateQuizForm.controls['quizSubject']?.touched">
+                            <span *ngIf="myCreateQuizForm.controls['quizSubject'].hasError('required')" style="color: aliceblue;">quizSubject is required</span>
+                            <span *ngIf="myCreateQuizForm.controls['quizSubject'].hasError('minlength')" style="color:red;">quizSubject should be minimum 3 characters</span>
+                            <span *ngIf="myCreateQuizForm.controls['quizSubject'].hasError('pattern')" style="color: red;">quizSubject should contain A-Z or a-z characters</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,14 +32,21 @@
                 <div class="col-5">
                     <div class="mb-3">
                         <label for="quizDuration" class="form-label">Duration (minutes)</label>
-                        <input type="number" class="form-control" id="quizDuration" placeholder="Enter quiz duration">
+                        <input type="number" class="form-control" id="quizDuration" placeholder="Enter quiz duration"
+                        name="quizDuration" #quizDuration="ngModel" [(ngModel)]="value.quizDuration">
+                        <div *ngIf="myCreateQuizForm.controls['quizDuration']?.invalid && myCreateQuizForm.controls['quizDuration']?.dirty || myCreateQuizForm.controls['quizDuration']?.touched">
+                            <span *ngIf="myCreateQuizForm.controls['quizDuration'].hasError('required')" style="color: aliceblue;">quizDuration is required</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-5">
                     <div class="mb-3">
-                        <label for="quizQuestions" class="form-label">Number of Questions</label>
-                        <input type="number" class="form-control" id="quizQuestionQuant"
-                            placeholder="Enter number of questions">
+                        <label for="quizQuestionQuant" class="form-label">Number of Questions</label>
+                        <input type="number" class="form-control" id="quizQuestionQuant" placeholder="Enter number of questions"
+                         name="quizQuestionQuant" #quizQuestionQuant="ngModel" [(ngModel)]="value.quizQuestionQuant">
+                        <div *ngIf="myCreateQuizForm.controls['quizQuestionQuant']?.invalid && myCreateQuizForm.controls['quizQuestionQuant']?.dirty || myCreateQuizForm.controls['quizQuestionQuant']?.touched">
+                            <span *ngIf="myCreateQuizForm.controls['quizQuestionQuant'].hasError('required')" style="color: aliceblue;">quizQuestionQuant is required</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,8 +54,13 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="quizDescription" class="form-label">Quiz Description</label>
-                        <textarea class="form-control" id="quizDescription" rows="3"
-                            placeholder="Enter quiz description"></textarea>
+                        <textarea class="form-control" id="quizDescription" rows="3" placeholder="Enter quiz description" pattern="[a-zA-Z ]+" minlength="3" required 
+                        name="quizDescription" #quizDescription="ngModel" [(ngModel)]="value.quizDescription"></textarea>
+                        <div *ngIf="myCreateQuizForm.controls['quizDescription']?.invalid && myCreateQuizForm.controls['quizDescription']?.dirty || myCreateQuizForm.controls['quizDescription']?.touched">
+                            <span *ngIf="myCreateQuizForm.controls['quizDescription'].hasError('required')" style="color: aliceblue;">quizDescription is required</span>
+                            <span *ngIf="myCreateQuizForm.controls['quizDescription'].hasError('minlength')" style="color:red;">quizDescription should be minimum 3 characters</span>
+                            <span *ngIf="myCreateQuizForm.controls['quizDescription'].hasError('pattern')" style="color: red;">quizDescription should contain A-Z or a-z characters</span>
+                        </div>                        
                     </div>
                 </div>
             </div>
