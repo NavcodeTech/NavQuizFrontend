@@ -14,7 +14,7 @@
                     </li>
 
                     <li class="list-group-item">
-                        <a class="text-light" routerLink="/dummy1">Dummy Item 1</a>
+                        <button class="btn btn-no-outline text-light" (click)="showQuizFormFunc()">Create a quiz</button>
                     </li>
                     <li class="list-group-item">
                         <a class="text-light" routerLink="/dummy2">Dummy Item 2</a>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" *ngIf="showQuizForm">
                     <app-quiz-tool></app-quiz-tool>
                 </div>
             </div>

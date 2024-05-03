@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TdashboardComponent implements OnInit {
 
   reminderText:string="This is remider text";
+  showQuizForm: boolean = false;
   constructor() { }
   isLoggedIn:boolean=false;
   ngOnInit(): void {
@@ -37,6 +38,12 @@ export class TdashboardComponent implements OnInit {
 
     // Clear the input value to allow selecting the same file again
     event.target.value = null;
+  }
+
+  showQuizFormFunc()
+  {
+    this.showQuizForm = true;
+    console.log('>>true');
   }
 
 }
