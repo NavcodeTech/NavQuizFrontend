@@ -10,5 +10,15 @@ export interface QuizDetailModel{
     quizSubject: string;
     quizDuration: number;
     quizQuestionQuant: number;
-    quizDescription: string;  
+    quizDescription: string;
+    questionDetailsModelSet: QuestionDetailsModel[];  
+}
+
+export interface QuestionDetailsModel{
+    questionTitle?: string;
+    questionContent: string;
+    option1: string
+    option2: string;
+    option3: string;
+    option4: string;
 }

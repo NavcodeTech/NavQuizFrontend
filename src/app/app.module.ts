@@ -9,7 +9,8 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TdashboardComponent } from './teachers/tdashboard/tdashboard.component';
-import { QuizToolComponent } from './teachers/quiz-tool/quiz-tool.component'
+import { QuizToolComponent } from './teachers/quiz-tool/quiz-tool.component';
+import { QuizPostComponent } from './teachers/quiz-post/quiz-post.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { QuizToolComponent } from './teachers/quiz-tool/quiz-tool.component'
     LoginComponent,
     SignupComponent,
     TdashboardComponent,
-    QuizToolComponent
+    QuizToolComponent,
+    QuizPostComponent
   ],
   imports: [
     BrowserModule,
