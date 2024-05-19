@@ -1,0 +1,89 @@
+<h1 class="text-center">Enter Question details</h1>
+<span class="text text-info ml-15">{{ questionLeft }}</span>
+<form (ngSubmit)="addQuestion()" #myQuestionForm="ngForm">
+    <div class="row">
+        <div class="col-5">
+            <div class="mb-3">
+                <label for="questionTitle" class="form-label">Question Title</label>
+                <input type="text" class="form-control" id="questionTitle" placeholder="Enter quiz title"
+                    pattern="[a-zA-Z ]+" name="questionTitle" #questionTitle="ngModel"
+                    [(ngModel)]="value.questionTitle">
+                <div
+                    *ngIf="myQuestionForm.controls['questionTitle']?.invalid && myQuestionForm.controls['questionTitle']?.dirty || myQuestionForm.controls['questionTitle']?.touched">
+                    <span *ngIf="myQuestionForm.controls['questionTitle'].hasError('pattern')"
+                        style="color: red;">questionTitle should contain A-Z or a-z characters</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <div class="mb-3">
+                <label for="questionContent" class="form-label">Give Question Content</label>
+                <textarea class="form-control" id="questionContent" placeholder="Enter question content" minlength="5"
+                    required name="questionContent" #questionContent="ngModel"
+                    [(ngModel)]="value.questionContent"></textarea>
+                <div
+                    *ngIf="myQuestionForm.controls['questionContent']?.invalid && myQuestionForm.controls['questionContent']?.dirty || myQuestionForm.controls['questionContent']?.touched">
+                    <span *ngIf="myQuestionForm.controls['questionContent'].hasError('required')"
+                        style="color: aliceblue;">questionContent is required</span>
+                    <span *ngIf="myQuestionForm.controls['questionContent'].hasError('minlength')"
+                        style="color:red;">questionContent should be minimum 3 characters</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <div class="mb-3">
+                <label for="option1" class="form-label">Enter 1st option</label>
+                <input type="text" class="form-control" id="option1" placeholder="Enter option details" name="option1"
+                    #option1="ngModel" [(ngModel)]="value.option1">
+                <div
+                    *ngIf="myQuestionForm.controls['option1']?.invalid && myQuestionForm.controls['option1']?.dirty || myQuestionForm.controls['option1']?.touched">
+                    <span *ngIf="myQuestionForm.controls['option1'].hasError('required')"
+                        style="color: aliceblue;">option1 is required</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="mb-3">
+                <label for="option2" class="form-label">Enter 2nd option</label>
+                <input type="text" class="form-control" id="option2" placeholder="Enter quiz duration" name="option2"
+                    #option2="ngModel" [(ngModel)]="value.option2">
+                <div
+                    *ngIf="myQuestionForm.controls['option2']?.invalid && myQuestionForm.controls['option2']?.dirty || myQuestionForm.controls['option2']?.touched">
+                    <span *ngIf="myQuestionForm.controls['option2'].hasError('required')"
+                        style="color: aliceblue;">option2 is required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <div class="mb-3">
+                <label for="option3" class="form-label">Enter 3rd option</label>
+                <input type="text" class="form-control" id="option3" placeholder="Enter option details" name="option3"
+                    #option3="ngModel" [(ngModel)]="value.option3">
+                <div
+                    *ngIf="myQuestionForm.controls['option3']?.invalid && myQuestionForm.controls['option3']?.dirty || myQuestionForm.controls['option3']?.touched">
+                    <span *ngIf="myQuestionForm.controls['option3'].hasError('required')"
+                        style="color: aliceblue;">option3 is required</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="mb-3">
+                <label for="option4" class="form-label">Enter 4th option</label>
+                <input type="text" class="form-control" id="option4" placeholder="Enter quiz duration" name="option4"
+                    #option4="ngModel" [(ngModel)]="value.option4">
+                <div
+                    *ngIf="myQuestionForm.controls['option4']?.invalid && myQuestionForm.controls['option4']?.dirty || myQuestionForm.controls['option4']?.touched">
+                    <span *ngIf="myQuestionForm.controls['option4'].hasError('required')"
+                        style="color: aliceblue;">option4 is required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Question</button>
+</form>

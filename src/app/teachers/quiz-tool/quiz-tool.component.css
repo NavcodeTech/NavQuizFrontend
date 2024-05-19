@@ -6,5 +6,12 @@
   border-style: solid;
   margin-top:8px;
   width:800px;
-  height:445px;
+  max-height: 445px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+  outline: none !important;
 }
