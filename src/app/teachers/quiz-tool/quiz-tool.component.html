@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <button [hidden]="isPostClicked" (click)="postClicked()" class="btn btn-primary">Post Quiz</button>
+            <a class="btn btn-primary" [hidden]="isPostClicked" (click)="postClicked()" class="btn btn-primary">Post Quiz</a>
             <div *ngIf="isPostClicked">
                     <app-quiz-post [quizQuestionQuant]="value.quizQuestionQuant"
                     (addQuestionDetails) = "addQuestionFunc($event)">
